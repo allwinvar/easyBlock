@@ -10,14 +10,14 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/results*"],
+      "matches": ["https://www.youtube.com/*"],
       "js": ["content.js"],
       "run_at": "document_idle"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["checkout.html"],
+      "resources": ["checkout.html", "checkout.js"],
       "matches": ["<all_urls>"]
     }
   ]
