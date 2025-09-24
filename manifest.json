@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "easyBlock",
+  "version": "0.0",
+  "description": "Injects HTML into YouTube search page and links to checkout.",
+  "permissions": ["scripting", "tabs"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "action": {
+    "default_icon": "icons/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/results*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["checkout.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
